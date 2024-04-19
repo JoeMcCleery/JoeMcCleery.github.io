@@ -4,9 +4,8 @@ interface NavigationProps {
 
 function Navigation({ onSelection }: NavigationProps) {
   const nav = [
-    { title: "Nav Item 1", href: "#" },
-    { title: "Nav Item 2", href: "#" },
-    { title: "Nav Item 3", href: "#" },
+    { title: "About", href: "#about" },
+    { title: "Github", href: "#github" },
   ];
 
   return (
