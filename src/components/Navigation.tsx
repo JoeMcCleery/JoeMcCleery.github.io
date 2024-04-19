@@ -1,4 +1,8 @@
-function Navigation() {
+interface NavigationProps {
+  onSelection?: () => void;
+}
+
+function Navigation({ onSelection }: NavigationProps) {
   const nav = [
     { title: "Nav Item 1", href: "#" },
     { title: "Nav Item 2", href: "#" },
@@ -7,10 +11,19 @@ function Navigation() {
 
   return (
     <nav>
-      <ul className="space-y-[1px] bg-emerald-800 pl-[1px] text-center md:py-[1px] md:pl-0">
+      <ul className="text-center">
         {nav.map((data, idx) => (
-          <li key={idx} className="bg-emerald-600 hover:bg-emerald-700">
-            <a href={data.href} className="block p-2">
+          <li
+            key={idx}
+            className="border-b border-emerald-800 bg-emerald-600 first:border-t md:hover:bg-emerald-700"
+          >
+            <a
+              href={data.href}
+              className="block p-2"
+              onClick={() => {
+                onSelection && onSelection();
+              }}
+            >
               {data.title}
             </a>
           </li>
