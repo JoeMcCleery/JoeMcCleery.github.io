@@ -1,28 +1,29 @@
 import { useEffect, useState } from "react";
 import Repo from "./Repo";
+import { Repositories } from "types/repositories";
 
 interface RepositoriesProps {
-  user: string;
+  username: string;
 }
 
-function UserRepos({ user }: RepositoriesProps) {
-  const [data, setData] = useState<JSON[]>([]);
+function UserRepos({ username }: RepositoriesProps) {
+  const [data, setData] = useState<Repositories>([]);
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/${user}/repos`)
+    fetch(`https://api.github.com/users/${username}/repos`)
       .then((response) => response.json())
-      .then((result: JSON[]) => {
+      .then((result: Repositories) => {
         setData(result);
         console.log(result);
       })
       .catch((error: unknown) => {
         console.log(error);
       });
-  }, [user]);
+  }, [username]);
 
   return (
     <div>
-      <h3 className="mb-2 text-xl font-bold">{user}</h3>
+      <h3 className="mb-2 text-xl font-bold">{username}</h3>
       <div className="space-y-1">
         {data.map((repoData, idx) => (
           <Repo key={idx} data={repoData} />

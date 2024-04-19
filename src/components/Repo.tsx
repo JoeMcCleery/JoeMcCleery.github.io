@@ -1,5 +1,7 @@
+import { MinimalRepository } from "types/repositories";
+
 interface RepoProps {
-  data: JSON;
+  data: MinimalRepository;
 }
 
 function Repo({ data }: RepoProps) {
