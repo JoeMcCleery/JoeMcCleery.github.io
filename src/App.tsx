@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="relative grid min-h-screen grid-rows-[auto_1fr] md:grid-cols-[auto_1fr] md:grid-rows-1">
       <Header />
-      <div className="flex flex-col justify-between">
+      <div className="grid grid-rows-[1fr_auto]">
         <Content />
         <Footer />
       </div>
