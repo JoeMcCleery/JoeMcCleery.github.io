@@ -6,10 +6,18 @@ interface RepoProps {
 
 function Repo({ data }: RepoProps) {
   return (
-    <div className="p-4">
-      <h4 className="font-bold">{data.name}</h4>
-      <p>{data.description}</p>
-    </div>
+    <a
+      href={data.html_url}
+      target="_blank"
+      rel="noreferrer"
+      title={`Go to ${data.name} github page`}
+      className="block h-full bg-emerald-600 transition-[background-color] md:hover:bg-emerald-700"
+    >
+      <div className="p-4">
+        <h4 className="font-bold">{data.name}</h4>
+        <p>{data.description}</p>
+      </div>
+    </a>
   );
 }
 
