@@ -17,17 +17,19 @@ function Repo({ data }: RepoProps) {
         <Link
           href={data.html_url}
           title={`Go to ${data.name} github page`}
-          text="Github"
           newWindow
-        />
+        >
+          Github
+        </Link>
 
         {data.homepage && (
           <Link
             href={data.homepage}
             title={`Go to ${data.name} website`}
-            text="Website"
             newWindow
-          />
+          >
+            Website
+          </Link>
         )}
       </div>
     </div>

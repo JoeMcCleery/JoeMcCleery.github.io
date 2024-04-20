@@ -5,9 +5,9 @@ interface NavigationProps {
 }
 
 function Navigation({ onSelection }: NavigationProps) {
-  const nav: LinkProps[] = [
-    { href: "#about", title: "Go to about section", text: "About" },
-    { href: "#github", title: "Go to github section", text: "Github" },
+  const navLinks: LinkProps[] = [
+    { href: "#about", title: "Go to about section", children: "About" },
+    { href: "#github", title: "Go to github section", children: "Github" },
   ];
 
   function onClick() {
@@ -17,14 +17,11 @@ function Navigation({ onSelection }: NavigationProps) {
   return (
     <nav>
       <ul className="text-center">
-        {nav.map((data, idx) => (
+        {navLinks.map((link, idx) => (
           <li key={idx}>
-            <Link
-              href={data.href}
-              title={data.title}
-              text={data.text}
-              onClick={onClick}
-            />
+            <Link href={link.href} title={link.title} onClick={onClick}>
+              {link.children}
+            </Link>
           </li>
         ))}
       </ul>

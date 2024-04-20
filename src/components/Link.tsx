@@ -1,14 +1,14 @@
-import { MouseEvent } from "react";
+import { MouseEvent, ReactNode } from "react";
 
 export interface LinkProps {
   href: string;
   title: string;
-  text: string;
   newWindow?: boolean;
+  children?: ReactNode;
   onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
 }
 
-function Link({ href, title, text, newWindow, onClick }: LinkProps) {
+function Link({ href, title, newWindow, children, onClick }: LinkProps) {
   return (
     <a
       href={href}
@@ -18,7 +18,7 @@ function Link({ href, title, text, newWindow, onClick }: LinkProps) {
       className="block bg-emerald-600 p-2 ring-[1px] ring-emerald-800 transition-[background-color] md:hover:bg-emerald-700"
       onClick={onClick}
     >
-      {text}
+      {children}
     </a>
   );
 }
