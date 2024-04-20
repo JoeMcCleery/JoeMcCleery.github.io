@@ -9,7 +9,7 @@ export function useFetch<T>(url: string, defaultData: T) {
     setIsLoading(true);
     fetch(url)
       .then((response) => {
-        if (!response.ok) throw new Error(response.statusText);
+        if (!response.ok) throw new Error(response.status.toString());
         return response.json();
       })
       .then((result: T) => {
