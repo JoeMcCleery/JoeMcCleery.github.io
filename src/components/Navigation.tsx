@@ -6,8 +6,8 @@ interface NavigationProps {
 
 function Navigation({ onSelection }: NavigationProps) {
   const nav: LinkProps[] = [
-    { href: "#about", title: "", text: "About" },
-    { href: "#github", title: "", text: "Github" },
+    { href: "#about", title: "Go to about section", text: "About" },
+    { href: "#github", title: "Go to github section", text: "Github" },
   ];
 
   function onClick() {
@@ -21,7 +21,7 @@ function Navigation({ onSelection }: NavigationProps) {
           <li key={idx}>
             <Link
               href={data.href}
-              title={`Go to ${data.text} section`}
+              title={data.title}
               text={data.text}
               onClick={onClick}
             />
