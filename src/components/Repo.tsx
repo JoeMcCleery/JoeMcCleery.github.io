@@ -1,4 +1,5 @@
 import { MinimalRepository } from "types/repositories";
+import Link from "./Link";
 
 interface RepoProps {
   data: MinimalRepository;
@@ -6,18 +7,30 @@ interface RepoProps {
 
 function Repo({ data }: RepoProps) {
   return (
-    <a
-      href={data.html_url}
-      target="_blank"
-      rel="noreferrer"
-      title={`Go to ${data.name} github page`}
-      className="block h-full bg-emerald-600 transition-[background-color] md:hover:bg-emerald-700"
-    >
+    <div className="flex h-full flex-col justify-between ring-[1px] ring-emerald-800">
       <div className="p-4">
         <h4 className="font-bold">{data.name}</h4>
         <p>{data.description}</p>
       </div>
-    </a>
+
+      <div className="flex transition-[background-color]">
+        <Link
+          href={data.html_url}
+          title={`Go to ${data.name} github page`}
+          text="Github"
+          newWindow
+        />
+
+        {data.homepage && (
+          <Link
+            href={data.homepage}
+            title={`Go to ${data.name} website`}
+            text="Website"
+            newWindow
+          />
+        )}
+      </div>
+    </div>
   );
 }
 
