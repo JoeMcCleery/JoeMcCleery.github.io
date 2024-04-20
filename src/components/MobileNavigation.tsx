@@ -21,11 +21,13 @@ function MobileNavigation() {
           className={`grid transition-[grid-template-rows] ${navOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
         >
           <div className="overflow-hidden">
-            <Navigation
-              onSelection={() => {
-                setNavOpen(false);
-              }}
-            />
+            <div className="border-y border-emerald-800">
+              <Navigation
+                onSelection={() => {
+                  setNavOpen(false);
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

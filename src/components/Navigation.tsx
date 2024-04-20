@@ -1,30 +1,30 @@
+import Link, { LinkProps } from "components/Link";
+
 interface NavigationProps {
   onSelection?: () => void;
 }
 
 function Navigation({ onSelection }: NavigationProps) {
-  const nav = [
-    { title: "About", href: "#about" },
-    { title: "Github", href: "#github" },
+  const nav: LinkProps[] = [
+    { href: "#about", title: "", text: "About" },
+    { href: "#github", title: "", text: "Github" },
   ];
+
+  function onClick() {
+    onSelection && onSelection();
+  }
 
   return (
     <nav>
       <ul className="text-center">
         {nav.map((data, idx) => (
-          <li
-            key={idx}
-            className="border-b border-emerald-800 bg-emerald-600 transition-[background-color] first:border-t md:hover:bg-emerald-700"
-          >
-            <a
+          <li key={idx}>
+            <Link
               href={data.href}
-              className="block p-2"
-              onClick={() => {
-                onSelection && onSelection();
-              }}
-            >
-              {data.title}
-            </a>
+              title={`Go to ${data.text} section`}
+              text={data.text}
+              onClick={onClick}
+            />
           </li>
         ))}
       </ul>
