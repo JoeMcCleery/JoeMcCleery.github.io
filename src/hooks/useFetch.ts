@@ -11,9 +11,11 @@ export function useFetch<T>(url: string, defaultData: T) {
       .then((response) => response.json())
       .then((result: T) => {
         setData(result);
+        console.log(result);
       })
       .catch((error: unknown) => {
         setError(error);
+        console.log(error);
       })
       .finally(() => {
         setIsLoading(false);
