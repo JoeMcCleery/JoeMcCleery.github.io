@@ -6,7 +6,7 @@ interface RepoProps {
 
 function Repo({ data }: RepoProps) {
   return (
-    <div>
+    <div className="p-4 ring-[1px] ring-emerald-800">
       <h4 className="font-bold">{data.name}</h4>
       <p>{data.description}</p>
     </div>

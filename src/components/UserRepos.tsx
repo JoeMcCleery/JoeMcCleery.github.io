@@ -19,7 +19,7 @@ function UserRepos({ username }: RepositoriesProps) {
       ) : (
         <>
           <h3 className="mb-2 text-xl font-bold">{username}</h3>
-          <div className="space-y-1">
+          <div className="grid grid-cols-1 gap-[1px] lg:grid-cols-2 xl:grid-cols-3">
             {data.map((repoData, idx) => (
               <Repo key={idx} data={repoData} />
             ))}
