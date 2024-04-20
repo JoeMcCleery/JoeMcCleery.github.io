@@ -14,7 +14,7 @@ function Navigation({ onSelection }: NavigationProps) {
         {nav.map((data, idx) => (
           <li
             key={idx}
-            className="border-b border-emerald-800 bg-emerald-600 first:border-t md:hover:bg-emerald-700"
+            className="border-b border-emerald-800 bg-emerald-600 transition-[background-color] first:border-t md:hover:bg-emerald-700"
           >
             <a
               href={data.href}
