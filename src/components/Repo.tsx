@@ -20,7 +20,7 @@ function Repo({ data }: RepoProps) {
         <p>{data.description}</p>
       </div>
 
-      <div className="flex transition-[background-color]">
+      <div className="flex">
         <Link
           href={data.html_url}
           title={`Go to ${data.name} github page`}

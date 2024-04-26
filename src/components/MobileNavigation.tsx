@@ -34,6 +34,7 @@ function MobileNavigation() {
       </div>
 
       <button
+        title="Close Navigation"
         className={`absolute top-full -z-10 w-full bg-cyan-800/50 backdrop-blur-sm transition-opacity ${navOpen ? "h-[calc(100vh-100%)] opacity-100" : "opacity-0"}`}
         onClick={() => {
           setNavOpen(false);
