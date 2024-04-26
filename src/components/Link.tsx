@@ -15,7 +15,7 @@ function Link({ href, title, newWindow, children, onClick }: LinkProps) {
       target={newWindow ? "_blank" : ""}
       rel={newWindow ? "noreferrer" : ""}
       title={title}
-      className="flex items-center justify-center space-x-2 bg-emerald-600 fill-current p-2 ring-[1px] ring-emerald-800 transition-[background-color] md:hover:bg-emerald-700"
+      className="flex items-center justify-center space-x-2 bg-cyan-600 fill-current p-2 text-cyan-50 ring-[1px] ring-cyan-800 transition-[background-color] md:hover:bg-cyan-700"
       onClick={onClick}
     >
       {children}

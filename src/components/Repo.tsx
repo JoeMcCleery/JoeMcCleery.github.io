@@ -10,9 +10,9 @@ interface RepoProps {
 
 function Repo({ data }: RepoProps) {
   return (
-    <div className="flex h-full flex-col justify-between ring-[1px] ring-emerald-800">
+    <div className="flex h-full flex-col justify-between bg-emerald-600 text-emerald-50 ring-1 ring-emerald-800">
       <div className="p-4">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-1">
           <h4 className="font-bold">{data.name}</h4>
           {data.fork && <ForkIcon />}
         </div>
