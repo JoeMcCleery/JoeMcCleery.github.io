@@ -1,7 +1,6 @@
 import { useFetch } from "hooks/useFetch";
 import Link from "components/Link";
 import { User } from "types/user";
-import ProfileIcon from "assets/profile.svg?react";
 
 interface GithubUserProps {
   username: string;
