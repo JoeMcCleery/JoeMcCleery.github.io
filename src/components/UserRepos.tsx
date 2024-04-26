@@ -1,7 +1,8 @@
-import Repo from "./Repo";
+import Repo from "components/Repo";
 import { Repositories } from "types/repositories";
 import { useFetch } from "hooks/useFetch";
 import Link from "components/Link";
+import ProfileIcon from "assets/profile.svg?react";
 
 interface RepositoriesProps {
   username: string;
@@ -20,6 +21,7 @@ function UserRepos({ username }: RepositoriesProps) {
         title={`Go to ${username} github page`}
         newWindow
       >
+        <ProfileIcon className="h-7 w-7" />
         <h3 className="text-xl font-bold">{username}</h3>
       </Link>
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Navigation from "components/Navigation";
-import FancyToggle from "./FancyToggle";
+import FancyToggle from "components/FancyToggle";
 
 function MobileNavigation() {
   const [navOpen, setNavOpen] = useState(false);
@@ -12,6 +12,7 @@ function MobileNavigation() {
         onClick={() => {
           setNavOpen(!navOpen);
         }}
+        title="Toggle Navigation"
       >
         <FancyToggle isOn={navOpen} />
       </button>
