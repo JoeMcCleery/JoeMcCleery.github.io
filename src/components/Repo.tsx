@@ -3,6 +3,7 @@ import Link from "components/Link";
 import CodeIcon from "assets/code.svg?react";
 import ForkIcon from "assets/fork.svg?react";
 import PagesIcon from "assets/pages.svg?react";
+import Languages from "./Languages";
 
 interface RepoProps {
   data: MinimalRepository;
@@ -16,6 +17,8 @@ function Repo({ data }: RepoProps) {
           <h4 className="font-bold">{data.name}</h4>
           {data.fork && <ForkIcon />}
         </div>
+
+        <Languages url={data.languages_url} />
 
         <p>{data.description}</p>
       </div>
