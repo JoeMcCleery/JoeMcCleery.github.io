@@ -3,10 +3,14 @@ import { Language } from "types/languages";
 
 interface LanguagesProps {
   url: string;
+  mainLanguage?: string;
 }
 
-function Languages({ url }: LanguagesProps) {
-  const [languages] = useFetch<Language>(url, {});
+function Languages({ url, mainLanguage }: LanguagesProps) {
+  const [languages] = useFetch<Language>(
+    url,
+    mainLanguage ? { [mainLanguage]: 0 } : {},
+  );
 
   return (
     <div className="flex flex-wrap gap-1">
