@@ -7,10 +7,10 @@ interface UserReposProps {
 
 function UserRepos({ username }: UserReposProps) {
   return (
-    <div className="space-y-[1px]">
+    <article className="space-y-[1px]">
       <GithubUser username={username} />
       <Repos username={username} />
-    </div>
+    </article>
   );
 }
 
