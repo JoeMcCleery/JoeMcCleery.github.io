@@ -14,4 +14,4 @@ jobs:
         with:
           script: |
             const fetchData = require('./src/fetch/fetchData.cjs')
-            await fetchData({github, context, core})
+            await fetchData({github, context, core, io})
