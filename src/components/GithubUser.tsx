@@ -7,7 +7,10 @@ interface GithubUserProps {
 }
 
 function GithubUser({ username }: GithubUserProps) {
-  const [user, isLoading, error] = useData<User>(username, {} as User);
+  const [user, isLoading, error] = useData<User>(
+    `${username}-user`,
+    {} as User,
+  );
 
   return (
     <div className="space-y-[1px]">

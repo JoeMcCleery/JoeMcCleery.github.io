@@ -41,19 +41,37 @@ async function fetchAllData() {
 
     // Save data
     fs.writeFile(
-      `${dataPath}/${username}.json`,
+      `${dataPath}/${username}-user.json`,
       JSON.stringify({ data: user }),
-      (err) => console.log(err),
+      (err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(`${username}.json written succesfully!`);
+        }
+      },
     );
     fs.writeFile(
       `${dataPath}/${username}-repos.json`,
       JSON.stringify({ data: repos }),
-      (err) => console.log(err),
+      (err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(`${username}-repos.json written succesfully!`);
+        }
+      },
     );
     fs.writeFile(
       `${dataPath}/${username}-languages.json`,
       JSON.stringify({ data: languages }),
-      (err) => console.log(err),
+      (err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(`${username}-languages.json written succesfully!`);
+        }
+      },
     );
   }
 }
