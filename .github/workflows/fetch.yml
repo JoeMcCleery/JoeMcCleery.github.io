@@ -13,5 +13,5 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const fetchData = require('./src/fetch/fetchData.js')
+            const fetchData = require('./src/fetch/fetchData.cjs')
             await fetchData({github, context, core})
