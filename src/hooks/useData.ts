@@ -1,21 +1,17 @@
 import { useEffect, useState } from "react";
 
-export function useFetch<T>(url: string, defaultData: T) {
+export function useData<T>(fileName: string, defaultData: T) {
   const [data, setData] = useState<T>(defaultData);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(url)
-      .then((response) => {
-        if (!response.ok) throw new Error(response.status.toString());
-        return response.json();
-      })
-      .then((result: T) => {
-        console.log(result);
+    import(`../data/${fileName}.json`)
+      .then((json: { data: T }) => {
         setError(null);
-        setData(result);
+        console.log(json);
+        setData(json.data);
       })
       .catch((error: unknown) => {
         console.log(error);
@@ -24,7 +20,7 @@ export function useFetch<T>(url: string, defaultData: T) {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [url]);
+  }, [fileName]);
 
   return [data, isLoading, error] as const;
 }

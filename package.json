@@ -7,8 +7,11 @@
     "dev": "vite --host",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "fetch-data:dev": "node --env-file=.env src/fetch/fetchData.js ",
+    "fetch-data": "node src/fetch/fetchData.js ",
     "preview": "vite preview",
     "predeploy": "yarn build",
+    "prebuild": "yarn fetch-data",
     "deploy": "gh-pages -d dist --nojekyll",
     "json2ts": "json2ts -i src/schemas/ -o src/types/"
   },

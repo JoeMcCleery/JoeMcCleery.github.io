@@ -3,13 +3,14 @@ import Link from "components/Link";
 import CodeIcon from "assets/code.svg?react";
 import ForkIcon from "assets/fork.svg?react";
 import PagesIcon from "assets/pages.svg?react";
-import Languages from "./Languages";
+import { Language } from "types/languages";
 
 interface RepoProps {
   data: MinimalRepository;
+  languages: Language;
 }
 
-function Repo({ data }: RepoProps) {
+function Repo({ data, languages }: RepoProps) {
   return (
     <div className="flex h-full flex-col justify-between bg-emerald-600 text-emerald-50 ring-1 ring-emerald-800">
       <div className="flex flex-col space-y-2 p-8">
@@ -24,10 +25,16 @@ function Repo({ data }: RepoProps) {
 
         <p>{data.description}</p>
 
-        <Languages
-          url={data.languages_url}
-          mainLanguage={data.language ?? undefined}
-        />
+        <div className="flex flex-wrap gap-1">
+          {Object.keys(languages).map((language, idx) => (
+            <p
+              key={idx}
+              className="rounded-full bg-fuchsia-800 px-2 text-sm text-fuchsia-50"
+            >
+              {language}
+            </p>
+          ))}
+        </div>
       </div>
 
       <div className="flex">

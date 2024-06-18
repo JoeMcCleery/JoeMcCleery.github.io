@@ -1,4 +1,4 @@
-import { useFetch } from "hooks/useFetch";
+import { useData } from "hooks/useData";
 import Link from "components/Link";
 import { User } from "types/user";
 
@@ -7,10 +7,7 @@ interface GithubUserProps {
 }
 
 function GithubUser({ username }: GithubUserProps) {
-  const [user, isLoading, error] = useFetch<User>(
-    `https://api.github.com/users/${username}`,
-    {} as User,
-  );
+  const [user, isLoading, error] = useData<User>(username, {} as User);
 
   return (
     <div className="space-y-[1px]">
