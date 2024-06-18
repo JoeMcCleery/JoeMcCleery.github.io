@@ -1,11 +1,12 @@
 const usernames = ["JoeMcCleery", "FearIndigo"];
+const dataPath = "/src/data";
 
-function fetchData({ github, context, core, io }) {
+async function fetchData({ github, context }) {
   const users = [];
-  usernames.forEach((username) => {
+  for (let username of usernames) {
     const user = await github.rest.users.getByUsername({ username });
     console.log(user);
-  });
+  }
 }
 
 module.exports = fetchData;
