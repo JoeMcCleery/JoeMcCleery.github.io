@@ -1,0 +1,17 @@
+name: Fetch data from github api
+on: push
+permissions:
+  contents: write
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Fetch Data 🚀
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fetchData = require('./src/fetch/fetchData.js')
+            await fetchData({github, context, core})
