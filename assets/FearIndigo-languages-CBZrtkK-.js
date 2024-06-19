@@ -1,1 +1,0 @@
-const a=[{HTML:14148},{"C#":7469,Dockerfile:840},{Vue:7063,JavaScript:1980,HTML:785,CSS:761},{"C#":184519},{TypeScript:113071,JavaScript:965,CSS:669,HTML:647},{"C++":332346,C:27051,"C#":23115,Python:21185,Makefile:18144,Cython:15802},{JavaScript:1076},{HTML:14154},{"C++":42099,Makefile:607},{HTML:16881}],e={data:a};export{a as data,e as default};
