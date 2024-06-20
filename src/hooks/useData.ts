@@ -10,11 +10,9 @@ export function useData<T>(fileName: string, defaultData: T) {
     import(`../data/${fileName}.json`)
       .then((json: { data: T }) => {
         setError(null);
-        console.log(json);
         setData(json.data);
       })
       .catch((error: unknown) => {
-        console.log(error);
         setError(error as Error);
       })
       .finally(() => {
