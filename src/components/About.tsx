@@ -9,7 +9,7 @@ function About() {
         <h2 className="text-2xl font-bold">About Me</h2>
       </div>
 
-      <p className="mb-2">Software developer from Perth, Western Australia.</p>
+      <p className="mb-4">Software developer from Perth, Western Australia.</p>
 
       <ContactLinks />
     </section>

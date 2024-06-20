@@ -30,7 +30,7 @@ function GithubUser({ username }: GithubUserProps) {
           href={user.html_url}
           title={`Go to ${user.name ?? user.login} github page`}
           newWindow
-          className="flex-col space-x-0 space-y-4 !p-8 text-center md:flex-row md:!justify-start md:space-x-8 md:space-y-0 md:text-left"
+          className="flex-col !items-start space-x-0 space-y-4 !p-8 md:flex-row md:!items-center md:!justify-start md:space-x-8 md:space-y-0 md:text-left"
         >
           <img src={user.avatar_url} alt="Avatar Icon" className="size-28" />
           <div>
