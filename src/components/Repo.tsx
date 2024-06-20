@@ -29,7 +29,7 @@ function Repo({ data, languages }: RepoProps) {
           {Object.keys(languages).map((language, idx) => (
             <p
               key={idx}
-              className="rounded-full bg-fuchsia-800 px-2 text-sm text-fuchsia-50"
+              className="rounded-full bg-fuchsia-800/50 px-2 text-sm text-fuchsia-50/80"
             >
               {language}
             </p>

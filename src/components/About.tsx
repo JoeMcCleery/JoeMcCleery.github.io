@@ -1,4 +1,5 @@
 import ProfileIcon from "assets/profile.svg?react";
+import ContactLinks from "./ContactLinks";
 
 function About() {
   return (
@@ -8,7 +9,9 @@ function About() {
         <h2 className="text-2xl font-bold">About Me</h2>
       </div>
 
-      <p>Software developer from Perth, Western Australia.</p>
+      <p className="mb-2">Software developer from Perth, Western Australia.</p>
+
+      <ContactLinks />
     </section>
   );
 }
